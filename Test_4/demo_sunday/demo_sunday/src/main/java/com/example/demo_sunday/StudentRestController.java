@@ -43,10 +43,10 @@ public class StudentRestController {
         return new ResponseEntity<>("created the "+newStudent.getName()+"finally", HttpStatusCode.valueOf(200));
     }
 
-    @PutMapping("/Student/{id}")
+    @PutMapping("/Student/{Id}")
     public ResponseEntity<Student> findStudentById(@PathVariable int Id){
 
-        if(Id>0){
+        if(Id<0){
             return new ResponseEntity<>(HttpStatusCode.valueOf(404));
         }
         for(Student student : student){
@@ -57,22 +57,22 @@ public class StudentRestController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/student")
-    public ResponseEntity<Student> updateStudent(@PathVariable int Id, @RequestBody Student updateStudent){
-        if(Id>0){
-            return new ResponseEntity<>(HttpStatusCode.valueOf(404));
-        }
-        for(Student student : student){
-            if(student.getId() == Id){
-                student.setEmail(updateStudent.getEmail());
-                student.setName(updateStudent.getName());
-
-                return new ResponseEntity<>(student,HttpStatus.NOT_FOUND);
-            }
-
-        }
-        return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
+//    @PutMapping("/student")
+//    public ResponseEntity<Student> updateStudent(@PathVariable int Id, @RequestBody Student updateStudent){
+//        if(Id>0){
+//            return new ResponseEntity<>(HttpStatusCode.valueOf(404));
+//        }
+//        for(Student student : student){
+//            if(student.getId() == Id){
+//                student.setEmail(updateStudent.getEmail());
+//                student.setName(updateStudent.getName());
+//
+//                return new ResponseEntity<>(student,HttpStatus.NOT_FOUND);
+//            }
+//
+//        }
+//        return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//    }
 
 
 
