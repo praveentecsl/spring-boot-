@@ -8,9 +8,10 @@ public class Student {
     private  String name;
     private  String email;
 
-public Student( String name, String email) {
-    Random random = new Random();
-    Id = random.nextInt(0,100);
+public Student( int Id, String name, String email) {
+//    Random random = new Random();
+//    Id = random.nextInt(0,100);
+    this.Id = Id;
     this.name = name;
     this.email = email;
 }
